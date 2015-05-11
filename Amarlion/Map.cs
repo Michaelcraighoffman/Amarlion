@@ -29,6 +29,8 @@ namespace Amarlion
             var tileWidth = _tmxMap.TileWidth;
             foreach (var layer in _tmxMap.Layers)
             {
+                if (layer.Visible == false)
+                    continue;
                 foreach (var tile in layer.Tiles)
                 {
                     if (tile.X < (viewRect.X / _tmxMap.TileWidth) || tile.X > ((viewRect.X + viewRect.Width) / _tmxMap.TileWidth) ||
@@ -57,7 +59,7 @@ namespace Amarlion
                     }
                     else
                     {
-                        int tileFrame = gid - 1;
+                        int tileFrame = gid-firstGid;
                         int column = (tileFrame % (tileset.Width / (_tmxMap.TileWidth+2)));
                         int row = tileFrame / (tileset.Width / (_tmxMap.TileWidth+2));
 

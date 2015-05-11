@@ -95,7 +95,7 @@ namespace Amarlion
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             
-            m.Render(spriteBatch, new Rectangle(gameTime.TotalGameTime.Seconds * 5, gameTime.TotalGameTime.Seconds * 3,1024,1024));
+            m.Render(spriteBatch, new Rectangle(0, 0,1024,1024));
             spriteBatch.DrawString(font, "FPS " + ((int)FPS).ToString(), Vector2.Zero, Color.Red);
             spriteBatch.End();
             
